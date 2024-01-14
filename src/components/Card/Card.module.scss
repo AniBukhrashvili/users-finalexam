@@ -1,0 +1,18 @@
+.Card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin: 50px auto 0;
+  border-radius: 6px;
+  width: 75%;
+  padding: 20px;
+  background-color: #24292f;
+
+  &__Img {
+    width: 45%;
+    padding: 20px;
+    display: block;
+    margin: 0 auto;
+  }
+}
