@@ -2,9 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   margin: 0 auto;
   margin-top: 5px;
   border-radius: 6px;
   padding: 20px;
+  width: 95%;
   background-color: #6b677aae;
+  word-break: break-all;
+
+  @media (min-width: 768px) {
+    width: 60%;
+  }
+
+  h6 {
+    text-align: center;
+  }
 }

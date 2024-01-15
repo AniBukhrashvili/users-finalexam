@@ -1,6 +1,6 @@
 import styles from "./Loading.module.scss";
 
-const Loading = () => {
+export default function Loading() {
   return (
     <div className={styles.Loading}>
       <div></div>
@@ -9,6 +9,4 @@ const Loading = () => {
       <div></div>
     </div>
   );
-};
-
-export default Loading;
+}

@@ -5,9 +5,13 @@
   color: white;
   margin: 50px auto 0;
   border-radius: 6px;
-  width: 75%;
+  width: 95%;
   padding: 20px;
   background-color: #24292f;
+
+  @media (min-width: 768px) {
+    width: 75%;
+  }
 
   &__Img {
     width: 45%;

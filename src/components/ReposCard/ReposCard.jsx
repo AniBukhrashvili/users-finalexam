@@ -1,14 +1,9 @@
 import { Grid, Link, Typography } from "@mui/material";
 import styles from "./ReposCard.module.scss";
 
-const ReposCard = ({ name, repos_link }) => {
+export default function ReposCard({ name, repos_link }) {
   return (
-    <Grid
-      className={styles.ReposCard}
-      container
-      justifyContent="center"
-      width="60%"
-    >
+    <Grid className={styles.ReposCard} justifyContent="center">
       <Typography sx={{ color: "#24292f" }}>Repository Name: {name}</Typography>
       <hr />
       <Link
@@ -20,6 +15,4 @@ const ReposCard = ({ name, repos_link }) => {
       </Link>
     </Grid>
   );
-};
-
-export default ReposCard;
+}

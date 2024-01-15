@@ -5,7 +5,7 @@ import Card from "../Card/Card";
 import Loading from "../Loading/Loading";
 import ReposCard from "../ReposCard/ReposCard";
 
-const Search = () => {
+export default function Search() {
   const [inputValue, setInputValue] = useState("");
   const [userData, setUserData] = useState([]);
   const [userRepos, setUserRepos] = useState([]);
@@ -38,7 +38,7 @@ const Search = () => {
   };
 
   return (
-    <>
+    <Grid container justifyContent="center" alignItems="center">
       <TextField
         label="Enter Username"
         variant="standard"
@@ -52,37 +52,44 @@ const Search = () => {
       >
         Search
       </Button>
-      <Grid>
+      <Grid container justifyContent="center">
         {isLoading ? (
           <Loading />
         ) : userData && userData.login ? (
-          <>
+          <Grid container flexDirection="column">
             <Card
               login={userData.login}
               avatar_url={userData.avatar_url}
               github_link={userData.html_url}
             />
             {userRepos.length > 0 ? (
-              <Grid>
-                <Typography variant="h6" fontStyle="italic" marginTop="20px">
+              <Grid container flexDirection="column" justifyContent="center">
+                <Typography
+                  variant="h6"
+                  marginTop="20px"
+                  marginBottom="12px"
+                  textAlign="center"
+                >
                   Public Repositories:
                 </Typography>
-                {userRepos.map((repo) => (
-                  <Grid key={repo.id}>
-                    <ReposCard name={repo.name} repos_link={repo.html_url} />
-                  </Grid>
+                {userRepos.map((repo, index) => (
+                  <ReposCard
+                    key={index}
+                    name={repo.name}
+                    repos_link={repo.html_url}
+                  />
                 ))}
               </Grid>
             ) : (
-              <div className="helper_text">No repositories found</div>
+              <Typography marginTop="20px" textAlign="center">
+                No repositories found
+              </Typography>
             )}
-          </>
+          </Grid>
         ) : (
-          <div className="helper_text">No user found</div>
+          <Typography marginTop="20px">No user found</Typography>
         )}
       </Grid>
-    </>
+    </Grid>
   );
-};
-
-export default Search;
+}

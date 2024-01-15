@@ -1,7 +1,7 @@
 import { Grid, Link, Typography } from "@mui/material";
 import styles from "./Card.module.scss";
 
-const Card = ({ login, avatar_url, github_link }) => {
+export default function Card({ login, avatar_url, github_link }) {
   return (
     <Grid className={styles.Card}>
       <Grid>
@@ -23,6 +23,4 @@ const Card = ({ login, avatar_url, github_link }) => {
       </Grid>
     </Grid>
   );
-};
-
-export default Card;
+}
