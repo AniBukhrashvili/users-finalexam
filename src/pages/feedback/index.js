@@ -56,7 +56,11 @@ export default function Feedback() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          m: 10,
+          m: 5,
+          "@media (min-width: 768px)": {
+            mr: 50,
+            ml: 50,
+          },
         }}
       >
         <TextField
@@ -64,7 +68,7 @@ export default function Feedback() {
           size="small"
           name="fullName"
           label="Full Name"
-          sx={{ margin: 0.8, width: "30%" }}
+          sx={{ margin: 0.8, width: "100%" }}
           value={name ? name : formik.values.fullName}
           onChange={(e) => {
             setName(e.target.value);
@@ -80,7 +84,7 @@ export default function Feedback() {
           size="small"
           name="email"
           label="Email"
-          sx={{ margin: 0.8, width: "30%" }}
+          sx={{ margin: 0.8, width: "100%" }}
           value={email ? email : formik.values.email}
           onChange={(e) => {
             setEmail(e.target.value);
@@ -97,7 +101,7 @@ export default function Feedback() {
           placeholder="Message"
           size="lg"
           variant="outlined"
-          sx={{ margin: 0.8, width: "30%" }}
+          sx={{ margin: 0.8, width: "100%" }}
           name="message"
           value={message ? message : formik.values.message}
           onChange={(e) => {
@@ -110,7 +114,7 @@ export default function Feedback() {
         <Button
           type="submit"
           sx={{
-            width: "30%",
+            width: "100%",
             m: 0.9,
             borderColor: "#24292f",
             color: "#24292f",
