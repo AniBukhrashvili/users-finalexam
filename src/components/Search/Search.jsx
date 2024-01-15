@@ -31,6 +31,7 @@ export default function Search() {
   const handleClick = () => {
     fetchUsers(inputValue);
     fetchRepos(inputValue);
+    localStorage.setItem("searchedValue", inputValue);
   };
 
   const handleInputChange = (event) => {
