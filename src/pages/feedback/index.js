@@ -43,6 +43,7 @@ export default function Feedback() {
     },
     validationSchema: validationSchema,
     onSubmit: async () => {
+      alert("Feedback sent successfully!");
       navigate("/");
     },
   });
